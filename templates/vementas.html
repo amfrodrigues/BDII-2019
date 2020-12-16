@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% set nomerestaurante = namespace(value="test") %}
+    {% set idementa = namespace(value=-1) %}
+    {% set tipoementa = namespace(value="test")%}
+    {% set catprod = namespace(value="test")%}
+    {% for ementa in ementas  %}
+        {% if nomerestaurante.value != ementa.8  %}
+            <br><h1> RESTAURANTE {{ementa.8}} </h1>
+            {% set nomerestaurante.value = ementa.8 %}
+        {% endif %}
+        {% if tipoementa.value != ementa.2 %}
+            <br>
+            <hr>
+            <hr>
+            <hr>
+            <h1> {{ementa.2}}</h1>
+            {% set tipoementa.value = ementa.2 %}
+        {% endif %}
+        {% if idementa.value != ementa.0  %}
+            <br>
+            <hr>
+            <hr>
+            <h2> EMENTA {{ementa.0}} - {{ementa.6}} </2>
+            {% set idementa.value = ementa.0 %}
+        {% endif %}
+        {% if  catprod.value != ementa.5 %}
+            <br>
+            <hr>
+            <h3> {{ementa.5}} </h3>
+            {% set catprod.value = ementa.5 %}
+
+        {% endif %}
+        <form action="{{url_for('pementa')}}" method='POST'>
+        <h5> {{ementa.3}}  {{ementa.4}} Qtd: {{ementa.7}} </h5>
+        Para pedir <input type="text" name="func" placeholder="id Funcionario"/>
+        <input type="text" name="client" placeholder="id cliente"/>
+        <input type="hidden" name="prod" value="{{ementa.1}}"/>
+        <input type="text" name="local" placeholder="id localvenda"/>
+        <input type="text" name="qtd" placeholder="quantidade do produto" />
+        
+        <button type="submit" value="submit"> PEDIR </button>
+        </form>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% for funcionario in funcionarios  %}
+    <hr>
+    <h2>Nome : {{funcionario.0}} {{funcionario.1}} </h2>
+    <br><h5> Nª Identidade : {{funcionario.2}} <br> NIB : {{funcionario.3}} </h5>
+    <br><h4> Cargo : {{funcionario.5}} <br> Salário :  {{funcionario.4  }} </h4>
+    <br> <h3> Nº VENDAS : {{funcionario.6 }}</h3>
+    
+    {% endfor %}
+{% endblock content %}

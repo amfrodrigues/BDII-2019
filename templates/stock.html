@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <hr>
+    <h3>Stock Produtos</h3>
+    {% set tp = namespace(value='test')%}
+    {% for produto  in produtos %}
+    {% if tp.value != produto.3  %}
+            <hr>
+        <h4>{{produto.3}}</h4>
+
+        {% set tp.value=produto.3 %}
+    {% endif %}
+    <form action="{{url_for('rstock')}}" method='POST'><h5>
+    {{produto.1}} Qtd: {{produto.5}} 
+    <br>
+    <input type="hidden" name="id_prod" value="{{produto.0}}"/>
+    QTD A REPOR <input type = "text" placeholder="Qtd a aumentar de stock" name ="nstock" value ="0"/>
+    {% set cprod = namespace(value=produto.2.split("€"))%}
+    {% set pprod = namespace(value=cprod.value[0].split(","))%}
+    PREÇO UNITARIO<input type = "text" placeholder="Novo Preço produto" name = "precoprod" value = " {{pprod.value[0]+'.'+pprod.value[1]}}"/>
+    <button type=submit value="submit"> Repor Stock </button>
+    </h5> </form> 
+    {% endfor %}
+{% endblock content %}

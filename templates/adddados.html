@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <hr>
+
+    <form action="{{url_for('addalergia')}}" method='POST'>
+    <h2>Alergias </h2><br>
+    Alergia :<input type="text"  name ="alergia" placeholder ="word"/>
+    <button type ="submit" value="submit"> Inserir Alergia </button>
+    <hr>
+
+    <form action="{{url_for('add_tipo_ementa')}}" method='POST'>
+    <h2>TIPO EMENTA </h2><br>
+    TIPO EMENTA :<input type="text"  name ="tipo_ementa" placeholder ="word"/>
+    <button type ="submit" value="submit"> INSERIR TIPO EMENTA </button>
+    <hr>
+
+    <form action="{{url_for('add_cargo')}}" method='POST'>
+    <h2>CARGO </h2><br>
+    CARGO :<input type="text"  name ="cargo" placeholder ="word"/>
+    <button type ="submit" value="submit"> INSERIR CARGO</button>
+    <hr>
+
+    <form action="{{url_for('add_funcionario')}}" method='POST'>
+    <h2>FUNCIONARIO </h2><br>
+    Primeiro Nome : <input type="text"  name ="pnome" placeholder ="word"/><br>
+    Ultimo Nome : <input type="text"  name ="unome" placeholder ="word" /><br>
+    Nº Identidade : <input type="text"  name ="nident" placeholder ="word"/><br>
+    NIB : <input type="text"  name ="nib" placeholder ="word"/><br>
+    Salario : <input type="text"  name ="salario"  placeholder ="number"/><br>
+    ID_CARGO : <input type="text"  name ="idcargo" placeholder ="number"/><br>
+    <button type ="submit" value="submit"> INSERIR CARGO</button>
+    <hr>
+
+    <form action="{{url_for('add_produto')}}" method='POST'>
+    <h2>PRODUTO </h2><br>
+    Nome Produto : <input type="text"  name ="nome"  placeholder ="word"/><br>
+    PRECO : <input type="text"  name ="custo "  placeholder ="number" /><br>
+    TIPO PRODUTO: <input type="text"  name ="tipo"  placeholder ="word"/><br>
+    ID ALERGIA : <input type="text"  name ="alergia " placeholder ="number" /><br>
+    STOCK: <input type="text"  name ="stock " placeholder ="number"/><br>
+    <button type ="submit" value="submit"> INSERIR PRODUTO </button>
+    <hr>
+
+    <form action="{{url_for('add_restaurante')}}" method='POST'>
+    <h2>Restaurante </h2><br>
+    Nome Restaurante : <input type="text"  name ="nome"  placeholder ="word"/><br>
+    TIPO COMIDA : <input type="text"  name ="tipo "  placeholder ="word"/><br>
+    <button type ="submit" value="submit"> INSERIR Restaurante </button>
+    <hr>
+
+    <form action="{{url_for('add_local')}}" method='POST'>
+    <h2>LOCAL </h2><br>
+    MORADA : <input type="text"  name ="morada"  placeholder ="word"/><br>
+    CODIGO POSTAL : <input type="text"  name ="codigo "  placeholder ="word"/><br>
+    ABERTURA : <input type="text"  name ="abertura" placeholder ="number"/><br>
+    FECHO : <input type="text"  name ="fecho" placeholder ="number"/><br>
+    TELEFONE : <input type="text"  name ="telefone"  placeholder ="word" /><br>
+    CORREIO : <input type="text"  name ="correio"  placeholder ="word" /><br>
+    ID Restaurante : <input type="text"  name ="idrest" placeholder ="number"/><br>
+    <button type ="submit" value="submit"> INSERIR LOCAL </button>
+    <hr>
+
+    <form action="{{url_for('add_ementa')}}" method='POST'>
+    <h2>EMENTA </h2><br>
+    ID TIPO EMENTA :<input type="text"  name ="tipo" placeholder ="number"/><br>
+    ID LOCAL : <input type="text"  name ="local " placeholder ="number"/><br>
+    <button type ="submit" value="submit"> INSERIR EMENTA </button>
+    <hr>
+
+    <form action="{{url_for('add_prodementa')}}" method='POST'>
+    <h2>PRODUTO DA EMENTA </h2><br>
+    ID PRODUTO : <input type="text"  name ="produto" placeholder ="number"/><br>
+    ID EMENTA : <input type="text"  name ="ementa " placeholder ="number"/><br>
+    <button type ="submit" value="submit"> INSERIR PRODUTOS DA EMENTA </button>
+    <hr>
+    
+    <form action="{{url_for('add_locais_venda')}}" method='POST'>
+    <h2>LOCAL DE VENDA </h2><br>
+    ID LOCAL  : <input type="text"  name ="local" placeholder ="number"/><br>
+    NOME LOCAL : <input type="text"  name ="nome "  placeholder ="word" /><br>
+    <button type ="submit" value="submit"> INSERIR LOCAIS DE VENDA </button>
+    <hr>
+
+    <form action="{{url_for('add_cliente')}}" method='POST'>
+    <h2>CLIENTE </h2><br>
+    Primeiro Nome  : <input type="text"  name ="pnome" placeholder ="word"/><br>
+    ULTIMO NOME: <input type="text"  name ="unome " placeholder ="word"/><br>
+    NIF : <input type="text"  name ="nif " placeholder ="word"/><br>
+    CODIGO POSTAL : <input type="text"  name ="cp " placeholder ="word"/><br>
+    <button type ="submit" value="submit"> INSERIR CLIENTE </button>
+    <hr>
+
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% set ncliente = namespace(value =-1)%}
+    {% set lcliente = namespace(value="test")%}
+    {% for venda in vendas  %}
+        {% if ncliente.value != venda.9 %}
+            <h1>Consumo de {{venda.5}} {{venda.6}} </h1>
+            {% set ncliente.value = venda.9 %}
+            {% set lcliente.value = "test" %}
+        {% endif %}
+        {% if lcliente.value != venda.8 %}
+            <h3> {{venda.8}} {{venda.7}} </h3>
+            {% set lcliente.value = venda.8 %}
+        {% endif %}
+        <form action="{{url_for('pvenda')}}" method='POST'>
+        <h5> {{venda.1 }} <br> Qtd : {{venda.3}} <br> PREÇO : {{venda.4}}<br> DATA: {{venda.2}} 
+        <input type="hidden" value ="{{venda.0}}" name ="id_venda"/>
+        <button type="submit" value="submit">PAGAR</button>
+        </h5>
+        </form>
+    {% endfor %}
+{% endblock content %}

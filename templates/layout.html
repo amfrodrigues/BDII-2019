@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if  title %}
+        <title> Restaurante-{{title}} </title>
+    {% else %}
+        <title> Projeto BD Restaurante </title>
+    {% endif %}
+</head>
+<body bgcolor="lightgrey">
+{% if title %}
+    <hr>
+    <h1><center>{{title}}<center></h1>
+{% endif %}
+    <div>
+    <center>
+        <ul>
+            <ul><a href="{{ url_for('adddados') }}"> Inserir Dados</a></ul>
+            <ul><a href="{{ url_for('index') }}"> Alterar Dados</a></ul>
+            <ul><a href="{{ url_for('index') }}"> Eliminar Dados</a></ul>
+            <ul><a href="{{ url_for('index') }}"> Tabelas Base Dados</a></ul>
+            <ul><a href="{{ url_for('vendas') }}"> Ver Consumos</a></ul>
+            <ul><a href="{{ url_for('ementas') }}"> Ver Ementas</a></ul>
+            <ul><a href="{{ url_for('stock') }}"> Repor Stock</a></ul>
+            <ul><a href="{{ url_for('vendasfunc') }}"> Dados Funcionarios </a></ul>
+        </ul>
+    </center>
+    </div>
+{% block content %}{% endblock content %}
+</body>
+</html>
